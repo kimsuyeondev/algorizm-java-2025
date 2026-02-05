@@ -17,10 +17,10 @@
 기본 패턴:  
 ```java
 void dfs(int node) {
-visited[node] = true;
-for (int next : graph[node]) {
-if (!visited[next]) dfs(next);
-}
+    visited[node] = true;
+    for (int next : graph[node]) {
+        if (!visited[next]) dfs(next);
+    }
 }  
 ```
 
@@ -32,8 +32,9 @@ if (!visited[next]) dfs(next);
 패턴:  
 ```java
 jobs.sort((a,b) -> a.end - b.end);  // 정렬 후  
+
 for (Job j : jobs) {
-if (j.start >= lastEnd) { count++; lastEnd = j.end; }
+    if (j.start >= lastEnd) { count++; lastEnd = j.end; }
 }
 ```
   ---
@@ -65,14 +66,14 @@ if (j.start >= lastEnd) { count++; lastEnd = j.end; }
 백트래킹 패턴:
 ```java
 void dfs(int depth) {
-if (depth == target) { return; }
-for (int i = 0; i < N; i++) {
-if (!visited[i]) {
-visited[i] = true;
-dfs(depth + 1);
-visited[i] = false;  // 복원!
-}
-}
+    if (depth == target) { return; }
+    for (int i = 0; i < N; i++) {
+        if (!visited[i]) {
+            visited[i] = true;
+            dfs(depth + 1);
+            visited[i] = false;  // 복원!
+        }
+    }
 }
 ```
   ---
